@@ -78,7 +78,7 @@ base.csv (10,000 filas · 17 columnas)
 
 ---
 
-## 📈 Resultados del Modelo
+##  Resultados del Modelo
 
 ### Tabla Comparativa — Conjunto de Test
 
@@ -131,8 +131,8 @@ Con umbral por defecto (0.5) el modelo detecta 1 de 30 fraudes. El análisis de 
 
 | Ranking | Variable | Importancia | Tipo |
 |---|---|---|---|
-| 1 | `dia_semana` | 59 | ⭐ Feature ingeniada (temporal) |
-| 2 | `hora` | 29 | ⭐ Feature ingeniada (temporal) |
+| 1 | `dia_semana` | 59 |  Feature ingeniada (temporal) |
+| 2 | `hora` | 29 |  Feature ingeniada (temporal) |
 | 2 | `marital_status` | 29 | Categórica original |
 | 4 | `num_dependents` | 25 | Numérica original |
 | 5 | `transaction_frequency` | 23 | Numérica original |
@@ -170,6 +170,6 @@ Con umbral por defecto (0.5) el modelo detecta 1 de 30 fraudes. El análisis de 
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 Proyecto desarrollado con fines académicos.
