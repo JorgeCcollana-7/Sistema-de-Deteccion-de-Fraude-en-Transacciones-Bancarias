@@ -1,4 +1,4 @@
-# 🏦 Sistema de Detección de Fraude en Transacciones Bancarias
+#  Sistema de Detección de Fraude en Transacciones Bancarias
 
 > Proyecto Final — Machine Learning Aplicado al Riesgo Financiero  
 > **Autor:** Jorge Ccollana  
@@ -6,13 +6,13 @@
 
 ---
 
-## 📋 Descripción del Proyecto
+##  Descripción del Proyecto
 
 Sistema de detección de fraude bancario sobre un dataset de **10,000 transacciones** con una tasa de incidencia del **2%**. El reto central es el desbalance severo de clases (ratio 49:1) y la construcción de un modelo interpretable que pueda justificarse ante un Comité de Riesgos.
 
 ---
 
-## 📁 Estructura del Repositorio
+##  Estructura del Repositorio
 
 ```
 ├── base.csv                          # Dataset original (10,000 transacciones)
@@ -22,7 +22,7 @@ Sistema de detección de fraude bancario sobre un dataset de **10,000 transaccio
 
 ---
 
-## 🗂️ Módulos del Proyecto
+##  Módulos del Proyecto
 
 | Módulo | Contenido |
 |---|---|
@@ -34,7 +34,7 @@ Sistema de detección de fraude bancario sobre un dataset de **10,000 transaccio
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 | Campo | Detalle |
 |---|---|
@@ -47,7 +47,7 @@ Sistema de detección de fraude bancario sobre un dataset de **10,000 transaccio
 
 ---
 
-## 🔧 Pipeline de Preprocesamiento
+##  Pipeline de Preprocesamiento
 
 ```
 base.csv (10,000 filas · 17 columnas)
@@ -86,7 +86,7 @@ base.csv (10,000 filas · 17 columnas)
 |---|---|---|---|---|---|---|---|---|
 | Random Forest | 0.9787 | 0.0000 | 0.0000 | 0.0000 | 0.5202 | 0.0306 | 0.1510 | 0/30 (0.0%) |
 | XGBoost | 0.7227 | 0.0175 | 0.2333 | 0.0326 | 0.4502 | 0.0392 | 0.0701 | 7/30 (23.3%) |
-| **LightGBM** ✅ | **0.9760** | **0.1250** | **0.0333** | **0.0526** | **0.5860** | **0.0417** | **0.2048** | **1/30 (3.3%)** |
+| **LightGBM**  | **0.9760** | **0.1250** | **0.0333** | **0.0526** | **0.5860** | **0.0417** | **0.2048** | **1/30 (3.3%)** |
 
 > **Modelo seleccionado: LightGBM** — mayor AUC-ROC (0.586) y KS (0.205)
 
@@ -109,7 +109,7 @@ base.csv (10,000 filas · 17 columnas)
 
 ---
 
-## 🎯 Umbral Óptimo de Decisión
+##  Umbral Óptimo de Decisión
 
 Con umbral por defecto (0.5) el modelo detecta 1 de 30 fraudes. El análisis de trade-off Precision-Recall identifica:
 
@@ -125,7 +125,7 @@ Con umbral por defecto (0.5) el modelo detecta 1 de 30 fraudes. El análisis de 
 
 ---
 
-## 🔍 Interpretabilidad — Hallazgos SHAP
+##  Interpretabilidad — Hallazgos SHAP
 
 **Top variables por importancia — LightGBM:**
 
@@ -143,40 +143,10 @@ Con umbral por defecto (0.5) el modelo detecta 1 de 30 fraudes. El análisis de 
 
 > Las features temporales `dia_semana` y `hora` dominan el modelo — el momento de la transacción es más predictivo que el monto.
 
----
-
-## ⚙️ Requisitos e Instalación
-
-```bash
-# Fijar versión de numpy compatible con todas las librerías
-pip install "numpy<2" --force-reinstall
-
-# Resto de librerías
-pip install pandas matplotlib seaborn scikit-learn scipy
-pip install xgboost lightgbm shap imbalanced-learn
-```
 
 ---
 
-## 🚀 Cómo Ejecutar
-
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/JorgeCcollana-7/Sistema-de-Deteccion-de-Fraude-en-Transacciones-Bancarias.git
-cd Sistema-de-Deteccion-de-Fraude-en-Transacciones-Bancarias
-
-# 2. Instalar dependencias
-pip install "numpy<2" pandas matplotlib seaborn scikit-learn scipy xgboost lightgbm shap imbalanced-learn
-
-# 3. Abrir el notebook
-jupyter notebook proyecto_fraude_completo.ipynb
-
-# 4. Ejecutar en orden (Kernel → Restart & Run All)
-```
-
----
-
-## 📌 Decisiones Técnicas
+##  Decisiones Técnicas
 
 | Decisión | Justificación |
 |---|---|
@@ -190,7 +160,7 @@ jupyter notebook proyecto_fraude_completo.ipynb
 
 ---
 
-## ⚠️ Limitaciones
+## Limitaciones
 
 - Dataset semi-sintético sin historial de dispositivo, IP ni geolocalización
 - **Distributional shift:** modelos entrenados con SMOTE (50/50) evaluados en datos reales (98/2) — AUC en CV (≈0.99) no refleja performance real en test (0.586)
